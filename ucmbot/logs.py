@@ -46,7 +46,7 @@ logs_dir = pathlib.Path('.').parent / 'logs'
 logs_dir.mkdir(exist_ok=True)
 # Create a handler that records all activity
 everything = logging.handlers.TimedRotatingFileHandler(
-    logs_dir / f'clovis.{format(datetime.datetime.today(), "%Y-%m-%d")}.log',
+    logs_dir / f'ucmbot.{format(datetime.datetime.today(), "%Y-%m-%d")}.log',
     when='midnight',
     encoding='UTF-8'
 )
@@ -56,7 +56,7 @@ everything.setLevel(logging.DEBUG)
 
 # Create a handler that records only ERRORs and CRITICALs
 errors_only = logging.handlers.TimedRotatingFileHandler(
-    logs_dir / f'ERRORS.clovis.{format(datetime.datetime.today(), "%Y-%m-%d")}.log',
+    logs_dir / f'ERRORS.ucmbot.{format(datetime.datetime.today(), "%Y-%m-%d")}.log',
     when='midnight',
     encoding='UTF-8'
 )

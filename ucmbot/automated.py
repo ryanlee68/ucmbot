@@ -1,5 +1,8 @@
-import logging
 from .bot import bot
+
+import discord
+import sys
+import logging
 
 logger = logging.getLogger(__name__)
 
@@ -28,8 +31,8 @@ async def on_guild_join(guild: discord.Guild):
         logger.info(message)
     else:
         if guild.owner:
-            message = 
-                "The ucm bot has joined the server, make sure the "
+            message = \
+                "The ucm bot has joined the server, make sure the " +\
                 "server is a community server and has an announcements channel"
             await guild.owner.send(message)
             logger.info('The owner was notified about the bot joining.')
