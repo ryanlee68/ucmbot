@@ -32,10 +32,12 @@ async def on_guild_join(guild: discord.Guild):
     else:
         if guild.owner:
             message = \
-                "The ucm bot has joined the server, make sure the " +\
+                "The ucm bot has joined the server, make sure the " \
                 "server is a community server and has an announcements channel"
             await guild.owner.send(message)
             logger.info('The owner was notified about the bot joining.')
+
+
 
 @bot.event
 async def on_error(event: str, *args, **kwargs):
