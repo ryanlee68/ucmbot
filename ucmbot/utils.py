@@ -17,7 +17,7 @@ async def get_events():
         'organizations/events/association-for-computing-machinery-uc-merced') \
         as resp:
             print(resp.status)
-            await asyncio.sleep(2)
+            # await asyncio.sleep(2)
             # print([a["uri"] for a in await resp.json()])
             print(await resp.json())
 
@@ -27,6 +27,7 @@ async def get_events():
 
 asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 asyncio.run(get_events())
+asyncio.gather
 # print(type(file[0]))
 # for a in file: print(a["uri"])
 # list = [a["uri"] for a in file]
