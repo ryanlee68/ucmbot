@@ -37,7 +37,9 @@ async def on_guild_join(guild: discord.Guild):
             await guild.owner.send(message)
             logger.info('The owner was notified about the bot joining.')
 
-
+# @bot.event
+# async def event():
+#     pass
 
 @bot.event
 async def on_error(event: str, *args, **kwargs):
